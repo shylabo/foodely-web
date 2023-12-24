@@ -1,5 +1,8 @@
 'use strict';
 
 module.exports = {
-  extends: 'recommended',
+  extends: ['octane', 'stylistic'],
+  rules: {
+    'eol-last': 'always',
+  },
 };

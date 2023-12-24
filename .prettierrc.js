@@ -1,12 +1,6 @@
-'use strict';
-
 module.exports = {
-  overrides: [
-    {
-      files: '*.{js,ts}',
-      options: {
-        singleQuote: true,
-      },
-    },
-  ],
+  arrowParens: 'avoid',
+  bracketSpacing: true, // match generated ember files
+  singleQuote: true,
+  trailingComma: 'all',
 };
