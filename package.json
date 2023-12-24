@@ -53,6 +53,7 @@
     "ember-qunit": "^8.0.2",
     "ember-resolver": "^11.0.1",
     "ember-simple-auth": "^6.0.0",
+    "ember-sinon-qunit": "^7.4.0",
     "ember-source": "~5.5.0",
     "ember-template-lint": "^5.13.0",
     "eslint": "^8.55.0",
