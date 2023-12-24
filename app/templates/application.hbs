@@ -1,5 +1,12 @@
-{{page-title "FoodelyWeb"}}
+<h1 id="title">Welcome to Ember</h1>
 
-<h2 id="title">Welcome to Ember</h2>
+{{#if this.session.isAuthenticated}}
+  Signed In.
+  <button onclick={{this.signOut}}>Sign Out</button>
+{{/if}}
 
-{{outlet}}
+{{#if this.routeRequiresAuthentication}}
+  <SignInForm @onSignedIn={{this.handleSignIn}} />
+{{else}}
+  {{outlet}}
+{{/if}}

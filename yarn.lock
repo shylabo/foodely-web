@@ -1309,7 +1309,7 @@
     ember-cli-babel "^7.26.11"
     ember-cli-htmlbars "^6.2.0"
 
-"@ember/test-waiters@^3.0.2":
+"@ember/test-waiters@^3", "@ember/test-waiters@^3.0.2":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@ember/test-waiters/-/test-waiters-3.1.0.tgz#61399919cbf793978da0b8bfdfdb7bca0cb80e9e"
   integrity sha512-bb9h95ktG2wKY9+ja1sdsFBdOms2lB19VWs8wmNpzgHv1NCetonBoV5jHBV4DHt0uS1tg9z66cZqhUVlYs96KQ==
@@ -1319,7 +1319,7 @@
     ember-cli-version-checker "^5.1.2"
     semver "^7.3.5"
 
-"@embroider/addon-shim@^1.8.3", "@embroider/addon-shim@^1.8.4", "@embroider/addon-shim@^1.8.6":
+"@embroider/addon-shim@^1.0.0", "@embroider/addon-shim@^1.7.1", "@embroider/addon-shim@^1.8.3", "@embroider/addon-shim@^1.8.4", "@embroider/addon-shim@^1.8.6":
   version "1.8.7"
   resolved "https://registry.yarnpkg.com/@embroider/addon-shim/-/addon-shim-1.8.7.tgz#ba2dcb0647ed2cb0c500c835326266b89ceec595"
   integrity sha512-JGOQNRj3UR0NdWEg8MsM2eqPLncEwSB1IX+rwntIj22TEKj8biqx7GDgSbeH+ZedijmCh354Hf2c5rthrdzUAw==
@@ -4567,6 +4567,13 @@ ember-compatibility-helpers@^1.1.2, ember-compatibility-helpers@^1.2.1:
     fs-extra "^9.1.0"
     semver "^5.4.1"
 
+ember-cookies@^1.0.0:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/ember-cookies/-/ember-cookies-1.1.1.tgz#7ea1964d91458583cd2490a0dca8b2232c1d89ba"
+  integrity sha512-72GsE2ibwUeEMoLa8yggF+Y5+W/koVG9vU166pnM8HFTsZKLC6RSIfWnkkGmJva06yPKPgusmymAatF+5hjjjQ==
+  dependencies:
+    "@embroider/addon-shim" "^1.7.1"
+
 ember-data@~5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/ember-data/-/ember-data-5.3.0.tgz#d7be6b77653a41ae8ed045ffb904f1adbdcb8920"
@@ -4672,6 +4679,18 @@ ember-router-generator@^2.0.0:
     "@babel/parser" "^7.4.5"
     "@babel/traverse" "^7.4.5"
     recast "^0.18.1"
+
+ember-simple-auth@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/ember-simple-auth/-/ember-simple-auth-6.0.0.tgz#7c3e4d0885de3f58c0568056eba03a6434f34084"
+  integrity sha512-9SzSFApxZ74CD4UxIeTV+poIPeXcRLXWM60cMvC1SwTYjoc/p9DeQF0pVm6m1XV6uA3kPUzEsEn4/GeHc2YX1w==
+  dependencies:
+    "@ember/test-waiters" "^3"
+    "@embroider/addon-shim" "^1.0.0"
+    "@embroider/macros" "^1.0.0"
+    ember-cli-is-package-missing "^1.0.0"
+    ember-cookies "^1.0.0"
+    silent-error "^1.0.0"
 
 ember-source@~5.5.0:
   version "5.5.0"
