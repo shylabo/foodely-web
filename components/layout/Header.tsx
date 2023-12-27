@@ -5,7 +5,7 @@ import { Button } from '../ui/button';
 const Header = () => {
   return (
     <header className="flex items-center justify-between h-20 w-full px-10 border-b">
-      <Link href={''}>
+      <Link href={'/'}>
         <Image src={'/image/foodely-logo.png'} alt={'Foodely logo'} width={120} height={40} />
       </Link>
       <nav className="flex items-center space-x-2">
