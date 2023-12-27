@@ -13,7 +13,7 @@ const Header = () => {
           Login
         </Button>
         <Button variant="outline-primary" className="font-semibold">
-          Find a Restaurant
+          Sign up
         </Button>
       </nav>
     </header>

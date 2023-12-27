@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 const AboutFoodely = () => {
   return (
     <>
-      <section className="flex w-full">
+      <section className="flex w-full bg-secondary">
         <div className="flex flex-col justify-around w-full py-16 px-4 space-y-4">
           <h2 className="text-2xl font-extrabold">What is Foodely?</h2>
           <h3 className="text-4xl lg:text-6xl font-extrabold">Delivered.</h3>
@@ -21,7 +21,7 @@ const AboutFoodely = () => {
         </div>
       </section>
 
-      <section className="flex flex-col items-center justify-around py-16 bg-secondary gap-4 p-4">
+      <section className="flex flex-col items-center justify-around py-16 gap-4 p-4">
         <h2 className="text-2xl lg:text-4xl font-bold text-center">
           Catering Convenience, Right at Your Office Doorstep
         </h2>

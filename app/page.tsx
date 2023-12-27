@@ -6,11 +6,13 @@ import FoodelyApp from './components/FoodelyApp';
 
 export default function Home() {
   return (
-    <Container>
+    <>
       <Hero />
-      <SelectCountry />
-      <AboutFoodely />
-      <FoodelyApp />
-    </Container>
+      <Container>
+        <SelectCountry />
+        <AboutFoodely />
+        <FoodelyApp />
+      </Container>
+    </>
   );
 }

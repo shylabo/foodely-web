@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 const FoodelyApp = () => {
   return (
-    <section className="flex w-full">
+    <section className="flex w-full bg-secondary">
       <div className="relative w-full h-[600px] hidden md:block">
         <Image src={'/image/foodely-app.jpeg'} alt={'office catering'} sizes="100%" fill className="object-cover" />
       </div>

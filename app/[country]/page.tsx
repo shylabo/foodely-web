@@ -16,7 +16,7 @@ const CitySelectPage: React.FC<CitySelectPageProps> = ({ params: { country } }) 
   const selectableCities = availableCities.filter((city) => city.countryCode === country);
 
   return (
-    <Container>
+    <>
       <Hero />
       {selectableCities.length > 0 ? (
         <SelectCity cities={selectableCities} />
@@ -30,9 +30,11 @@ const CitySelectPage: React.FC<CitySelectPageProps> = ({ params: { country } }) 
           </div>
         </section>
       )}
-      <AboutFoodely />
-      <FoodelyApp />
-    </Container>
+      <Container>
+        <AboutFoodely />
+        <FoodelyApp />
+      </Container>
+    </>
   );
 };
 
