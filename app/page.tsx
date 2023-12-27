@@ -1,10 +1,17 @@
-import { Button } from '@/components/ui/button';
+import Container from '@/components/layout/Container';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <p>hello</p>
-      <Button>hello</Button>
-    </main>
+    <Container>
+      <p className="h-80">hello</p>
+      <p className="h-80">hello</p>
+      <p className="h-80">hello</p>
+      <p className="h-80">hello</p>
+      <p className="h-80">hello</p>
+      <p className="h-80">hello</p>
+      <p className="h-80">hello</p>
+      <p className="h-80">hello</p>
+      <p className="h-80">hello</p>
+    </Container>
   );
 }
