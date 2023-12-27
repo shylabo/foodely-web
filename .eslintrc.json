@@ -1,3 +1,157 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "airbnb",
+    "eslint:recommended",
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended",
+    "plugin:testing-library/react",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:react/jsx-runtime",
+    "prettier"
+  ],
+  "plugins": ["react-hooks", "import", "prettier", "jsx-a11y", "babel", "react"],
+  "globals": {
+    "jest": true,
+    "describe": true,
+    "fdescribe": true,
+    "xdescribe": true,
+    "it": true,
+    "xit": true,
+    "beforeAll": true,
+    "beforeEach": true,
+    "afterAll": true,
+    "afterEach": true,
+    "expect": true,
+    "localStorage": true,
+    "Event": true,
+    "Headers": true,
+    "Request": true,
+    "jasmine": true,
+    "window": true,
+    "document": true,
+    "fetch": true
+  },
+  "rules": {
+    "no-console": ["warn", { "allow": ["info", "error"] }],
+    "import/prefer-default-export": "off",
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
+    "jsx-a11y/label-has-for": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
+    "no-param-reassign": [
+      2,
+      {
+        "props": false
+      }
+    ],
+    "no-underscore-dangle": ["error", { "allow": ["__SERVER__", "__PRELOADED__STATE__"] }],
+    "no-extra-boolean-cast": "off",
+    "no-unsafe-optional-chaining": 0,
+    "object-curly-spacing": [2, "always"],
+    "react-hooks/rules-of-hooks": "error",
+    "react/function-component-definition": [0, { "namedComponents": "arrow-function" }],
+    "react/jsx-props-no-spreading": 0,
+    "prefer-promise-reject-errors": 0,
+    "no-lonely-if": "error",
+    "no-nested-ternary": "error",
+    "react/no-unused-prop-types": "off",
+    "react/jsx-indent": 0,
+    "import/no-unresolved": "off",
+    "sort-imports": [
+      "warn",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true
+      }
+    ],
+    "import/order": [
+      1,
+      {
+        "groups": ["builtin", "external", "internal", ["parent", "sibling", "index"], "object", "type", "unknown"],
+        "pathGroups": [
+          { "pattern": "react*", "group": "external", "position": "before" },
+          { "pattern": "./*", "group": "external" },
+          { "pattern": "prop-types", "group": "external" },
+          { "pattern": "{hooks,hooks/**}", "group": "internal" },
+          { "pattern": "hocs/**", "group": "internal" },
+          { "pattern": "helpers/**", "group": "internal" },
+          { "pattern": "services/**", "group": "internal" },
+          { "pattern": "store/**", "group": "internal" },
+          { "pattern": "components/**", "group": "parent" },
+          { "pattern": "mocks/**", "group": "parent" }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx"] }],
+    "no-use-before-define": "off",
+    "prettier/prettier": 0,
+    "import/extensions": [
+      0,
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never"
+      }
+    ],
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-page-custom-font": "off"
+  },
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "requireConfigFile": false,
+    "babelOptions": {
+      "babelrc": false,
+      "configFile": false,
+      "presets": ["@babel/preset-react"]
+    },
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["components", "../components/**/*"],
+          ["helpers", "../helpers/**/*"],
+          ["assets", "../assets/**/*"],
+          ["mocks", "../mocks/**/*"],
+          ["pages", "../pages/**/*"],
+          ["styles", "../styles/**/*"]
+        ],
+        "extensions": [".js", ".jsx", ".json"]
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.jsx"],
+      "rules": {
+        "react/prop-types": 0
+      }
+    }
+  ]
 }
