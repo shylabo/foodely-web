@@ -1,4 +1,4 @@
-export type Cuisine =
+export type Category =
   | 'African'
   | 'Asian'
   | 'American'
