@@ -35,7 +35,7 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant }) => {
         <CardContent className="p-2 space-y-2">
           <div>
             <CardTitle className="text-base">{restaurant.name}</CardTitle>
-            <CardDescription className="text-base">{restaurant.short_desc}</CardDescription>
+            <CardDescription className="text-base">{restaurant.description}</CardDescription>
           </div>
           <Separator />
           <div className="flex items-center gap-x-1">
