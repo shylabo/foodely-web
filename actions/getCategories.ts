@@ -1,4 +1,4 @@
-import { CategoryData, categories } from '@/constants';
+import { CategoryData, categories } from './mock/category';
 
 export async function getCategories(): Promise<CategoryData[] | null> {
   return categories;

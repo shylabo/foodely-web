@@ -3,7 +3,7 @@ import Hero from '../components/Hero';
 import AboutFoodely from '../components/AboutFoodely';
 import FoodelyApp from '../components/FoodelyApp';
 import SelectCity from './components/SelectCity';
-import { availableCities } from '@/constants/city';
+import { availableCities } from '@/actions/mock/city';
 import Link from 'next/link';
 
 interface CitySelectPageProps {

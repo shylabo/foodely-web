@@ -1,14 +1,19 @@
-import { City, availableCountries } from '@/constants';
-import CitySelector from './CitySelector';
 import Link from 'next/link';
 import { MdArrowBack } from 'react-icons/md';
+
+import CitySelector from './CitySelector';
+import { getCountries } from '@/actions/getCountries';
+import { City } from '@/actions/mock';
 
 interface SelectCityProps {
   cities: City[];
 }
 
-const SelectCity: React.FC<SelectCityProps> = ({ cities }) => {
-  const country = availableCountries.find((country) => country.value === cities[0].countryCode);
+const SelectCity: React.FC<SelectCityProps> = async ({ cities }) => {
+  const countries = await getCountries();
+  if (!countries) return null;
+
+  const country = countries.find((country) => country.value === cities[0].countryCode);
   return (
     <section className="p-8 space-y-8">
       <div className="flex items-center justify-between">

@@ -4,7 +4,7 @@ export interface City {
   label: string;
 }
 
-const canada = [
+const canada: City[] = [
   {
     countryCode: 'ca',
     value: 'vancouver',
@@ -45,6 +45,6 @@ const canada = [
     value: 'quebec',
     label: 'Quebec',
   },
-] as const;
+];
 
-export const availableCities = [...canada] as const;
+export const availableCities = [...canada];

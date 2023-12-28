@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
-import { CategoryData } from '@/constants';
+import { CategoryData } from '@/actions/mock';
 
 interface CategoryCardProps {
   category: CategoryData;

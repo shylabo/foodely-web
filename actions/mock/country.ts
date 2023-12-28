@@ -1,4 +1,10 @@
-export const availableCountries = [
+export interface Country {
+  value: string;
+  label: string;
+  flag: string;
+}
+
+export const availableCountries: Country[] = [
   {
     value: 'ca',
     label: 'Canada',
