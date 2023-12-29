@@ -9,6 +9,7 @@ import {
   MdOutlineRemoveCircleOutline,
   MdOutlineReplay,
   MdOutlineSchedule,
+  MdOutlineSearch,
 } from 'react-icons/md';
 
 import Container from '@/components/layout/Container';
@@ -32,6 +33,8 @@ import { getFormatter } from '@/lib/utils';
 import { Restaurant } from '@/types/restaurant';
 import { MenuItem } from '@/types/menu-item';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+import SearchInput from '@/components/SearchInput';
+import { usePathname } from 'next/navigation';
 
 const deliveryTimes = [
   {
@@ -76,6 +79,7 @@ export interface CartItem {
 
 const Client: React.FC<ClientProps> = ({ restaurant, menuItems }) => {
   const [cart, setCart] = useState<CartItem[]>([]);
+  const pathname = usePathname();
 
   const formatter = getFormatter();
   const formattedMinAmount = formatter.format(restaurant.min_order_amount);
@@ -157,7 +161,9 @@ const Client: React.FC<ClientProps> = ({ restaurant, menuItems }) => {
             <h2 className="text-white text-2xl md:text-6xl font-extrabold">{restaurant.name}</h2>
             <h3 className="text-white text-lg md:text-2xl">{restaurant.description}</h3>
           </div>
-          <Badge variant="secondary">Min order: {formattedMinAmount}</Badge>
+          <Badge variant="secondary" className="pointer-events-none">
+            Min order: {formattedMinAmount}
+          </Badge>
         </div>
       </div>
 
@@ -165,8 +171,11 @@ const Client: React.FC<ClientProps> = ({ restaurant, menuItems }) => {
       <div className="h-20 w-full bg-secondary sticky top-0 z-10 border-b">
         <div className="container flex items-center justify-between h-full">
           <div className="w-1/3">
-            <p className="flex items-center gap-x-1 font-semibold pl-1">Search menu</p>
-            <Input placeholder="Search menu..." className="rounded-full" disabled />
+            <SearchInput
+              destination={pathname}
+              icon={MdOutlineSearch}
+              placeholder={`Search menu in ${restaurant.name}`}
+            />
           </div>
           <div className="flex items-end gap-x-4">
             <div>
