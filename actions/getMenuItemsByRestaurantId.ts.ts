@@ -2,8 +2,12 @@ import { menuItems } from './mock';
 import { restaurants } from './mock/restaurant';
 import { MenuItem } from '@/types/menu-item';
 
-export async function getMenuItemsByRestaurantId(id: number): Promise<MenuItem[]> {
+export async function getMenuItemsByRestaurantId(id: number, query?: string): Promise<MenuItem[]> {
   const items = menuItems.filter((item) => item.restaurantId === id);
+  if (query) {
+    const filteredItems = items.filter((item) => item.name.includes(query));
+    return filteredItems;
+  }
   return items;
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v1/restaurants`, {
