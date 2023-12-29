@@ -53,7 +53,6 @@ const deliveryTimes = [
 ];
 
 const TimeSelector: React.FC = () => {
-  console.log(new Date());
   return (
     <Select>
       {' '}

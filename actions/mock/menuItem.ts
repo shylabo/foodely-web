@@ -2,6 +2,7 @@ import { MenuItem } from '@/types/menu-item';
 
 export const menuItems: MenuItem[] = [
   {
+    id: 1,
     restaurantId: 1,
     name: 'Dish 1',
     description: 'Delicious dish with special sauce',
@@ -26,6 +27,7 @@ export const menuItems: MenuItem[] = [
     menu_section: 'Main Course',
   },
   {
+    id: 2,
     restaurantId: 1,
     name: 'Dish 2',
     description: 'Spicy and flavorful',
@@ -50,6 +52,7 @@ export const menuItems: MenuItem[] = [
     menu_section: 'Appetizer',
   },
   {
+    id: 3,
     restaurantId: 1,
     name: 'Dish 3',
     description: 'Vegetarian delight',
@@ -74,6 +77,7 @@ export const menuItems: MenuItem[] = [
     menu_section: 'Vegetarian',
   },
   {
+    id: 4,
     restaurantId: 1,
     name: 'Dish 4',
     description: 'Classic comfort food',
@@ -98,6 +102,7 @@ export const menuItems: MenuItem[] = [
     menu_section: 'Comfort Food',
   },
   {
+    id: 5,
     restaurantId: 1,
     name: 'Dish 5',
     description: 'Sweet treat for dessert lovers',

@@ -1,6 +1,7 @@
 import { IntoleranceData } from '@/actions/mock/intolerance';
 
 export interface MenuItem {
+  id: number;
   restaurantId: number;
   name: string;
   description: string;
