@@ -19,9 +19,10 @@ import {
 } from '@/components/ui/sheet';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { MdLocationOn, MdOutlineSchedule } from 'react-icons/md';
 import { Separator } from '@/components/ui/separator';
+import DateSelector from './components/DateSelector';
+import TimeSelector from './components/TimeSelector';
 
 interface RestaurantPageProps {
   params: {
@@ -91,42 +92,55 @@ const RestaurantPage: React.FC<RestaurantPageProps> = async ({ params: { restaur
         </div>
       </div>
 
+      {/* Sticky Bar  */}
       <div className="h-20 w-full bg-secondary sticky top-0 z-10 border-b">
         <div className="container flex items-center justify-between h-full">
-          <div></div>
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button className="font-semibold h-12">
-                View order
-                <span className="ml-2">$5,600</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent>
-              <SheetHeader>
-                <SheetTitle>Edit profile</SheetTitle>
-                <SheetDescription>Make changes to your profile here. Click save when you're done.</SheetDescription>
-              </SheetHeader>
-              <div className="grid gap-4 py-4">
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="name" className="text-right">
-                    Name
-                  </Label>
-                  <Input id="name" value="Pedro Duarte" className="col-span-3" />
-                </div>
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="username" className="text-right">
-                    Username
-                  </Label>
-                  <Input id="username" value="@peduarte" className="col-span-3" />
-                </div>
+          <div className="w-1/3">
+            <p className="flex items-center gap-x-1 font-semibold pl-1">Search menu</p>
+            <Input placeholder="Search menu..." className="rounded-full" disabled />
+          </div>
+          <div className="flex items-end gap-x-4">
+            <div>
+              <p className="flex items-center gap-x-1 font-semibold pl-1">Delivery schedule</p>
+              <div className="flex items-center gap-x-2">
+                <DateSelector />
+                <TimeSelector />
               </div>
-              <SheetFooter>
-                <SheetClose asChild>
-                  <Button type="submit">Save changes</Button>
-                </SheetClose>
-              </SheetFooter>
-            </SheetContent>
-          </Sheet>
+            </div>
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button className="font-semibold h-12">
+                  View order
+                  <span className="ml-2">$5,600</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent>
+                <SheetHeader>
+                  <SheetTitle>Edit profile</SheetTitle>
+                  <SheetDescription>Make changes to your profile here. Click save when you're done.</SheetDescription>
+                </SheetHeader>
+                <div className="grid gap-4 py-4">
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="name" className="text-right">
+                      Name
+                    </Label>
+                    <Input id="name" value="Pedro Duarte" className="col-span-3" />
+                  </div>
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="username" className="text-right">
+                      Username
+                    </Label>
+                    <Input id="username" value="@peduarte" className="col-span-3" />
+                  </div>
+                </div>
+                <SheetFooter>
+                  <SheetClose asChild>
+                    <Button type="submit">Save changes</Button>
+                  </SheetClose>
+                </SheetFooter>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
         {/* TODO: Menu Section */}
       </div>
