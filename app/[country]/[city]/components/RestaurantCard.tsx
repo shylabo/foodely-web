@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/c
 import { Restaurant } from '@/types/restaurant';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { MdDinnerDining, MdLocationOn, MdOutlineError, MdOutlineWallet } from 'react-icons/md';
+import { MdLocationOn, MdOutlineError, MdOutlineRestaurant, MdOutlineWallet } from 'react-icons/md';
 import { getFormatter } from '@/lib/utils';
 
 interface RestaurantCardProps {
@@ -39,7 +39,7 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant }) => {
           </div>
           <Separator />
           <div className="flex items-center gap-x-1">
-            <MdDinnerDining size={16} />
+            <MdOutlineRestaurant />
             {restaurant.categories.map((category) => (
               <Badge variant="secondary">{category.label}</Badge>
             ))}

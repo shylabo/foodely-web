@@ -8,6 +8,7 @@ import {
   MdLocationOn,
   MdOutlineRemoveCircleOutline,
   MdOutlineReplay,
+  MdOutlineRestaurant,
   MdOutlineSchedule,
   MdOutlineSearch,
 } from 'react-icons/md';
@@ -16,16 +17,7 @@ import Container from '@/components/layout/Container';
 import { Badge } from '@/components/ui/badge';
 import MenuItemCard from './components/MenuItemCard';
 import { Button } from '@/components/ui/button';
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/ui/sheet';
-import { Input } from '@/components/ui/input';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Separator } from '@/components/ui/separator';
 import DateSelector from './components/DateSelector';
 import TimeSelector from './components/TimeSelector';
@@ -35,6 +27,16 @@ import { MenuItem } from '@/types/menu-item';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import SearchInput from '@/components/SearchInput';
 import { usePathname } from 'next/navigation';
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
 
 const deliveryTimes = [
   {
@@ -232,17 +234,83 @@ const Client: React.FC<ClientProps> = ({ restaurant, menuItems }) => {
 
                 {/* Footer */}
                 <div className="space-y-2">
-                  <SheetClose asChild>
-                    <Button type="submit" className="w-full flex justify-between" disabled={!canCheckout}>
-                      <div className="flex items-center gap-x-2">
-                        <div className="flex items-center justify-center bg-white rounded-full text-primary w-6 h-6">
-                          <div>{totalQuantity}</div>
+                  {/* Checkout Dialog */}
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button type="submit" className="w-full flex justify-between" disabled={!canCheckout}>
+                        <div className="flex items-center gap-x-2">
+                          <div className="flex items-center justify-center bg-white rounded-full text-primary w-6 h-6">
+                            <div>{totalQuantity}</div>
+                          </div>
+                          <div>Go to checkout</div>
                         </div>
-                        <div>Go to checkout</div>
+                        <div>{formattedTotalAmount}</div>
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-md p-0 border-none">
+                      <div className="p-4">
+                        <DialogHeader>
+                          <div className="space-y-2">
+                            <DialogTitle className="text-2xl">Checkout</DialogTitle>
+                            <DialogDescription>
+                              <p className="flex items-center gap-x-1">
+                                <MdOutlineRestaurant />
+                                {restaurant.name}
+                              </p>
+                              <p className="flex items-center gap-x-1">
+                                <MdLocationOn />
+                                {restaurant.address}
+                              </p>
+                            </DialogDescription>
+                            <div className="flex items-center gap-x-1"></div>
+                          </div>
+                        </DialogHeader>
+                        <ul className="p-2 flex-1">
+                          {cart.length > 0 &&
+                            cart.map((cartItem) => (
+                              <li key={cartItem.menuItem.id} className="flex items-center gap-x-2 p-1">
+                                <div className="w-20">
+                                  <AspectRatio ratio={16 / 9}>
+                                    <Image
+                                      src={cartItem.menuItem.eye_catch_image}
+                                      alt={'item eye catch image'}
+                                      fill
+                                      className="object-fit rounded-sm"
+                                    />
+                                  </AspectRatio>
+                                </div>
+                                <div className="flex-1 space-y-1">
+                                  <p>{cartItem.menuItem.name}</p>
+                                  <p className="text-primary">{formatter.format(cartItem.menuItem.amount)}</p>
+                                </div>
+                                <div>{cartItem.quantity}</div>
+                              </li>
+                            ))}
+                        </ul>
+                        <Separator className="my-2" />
+                        <div className="flex flex-col items-end">
+                          <div className="flex items-center justify-between w-1/2">
+                            <p>Total</p>
+                            <p className="text-primary font-bold">{formattedTotalAmount}</p>
+                          </div>
+                        </div>
+                        <DialogFooter className="pt-4">
+                          <DialogClose>
+                            <Button variant="ghost" type="button" className="w-full">
+                              Cancel
+                            </Button>
+                          </DialogClose>
+                          <DialogClose>
+                            <Button type="submit" className="w-full" disabled={!canCheckout}>
+                              Place Order
+                            </Button>
+                          </DialogClose>
+                        </DialogFooter>
                       </div>
-                      <div>{formattedTotalAmount}</div>
-                    </Button>
-                  </SheetClose>
+                    </DialogContent>
+                  </Dialog>
+
+                  {/* Clear Cart */}
                   <Button
                     type="button"
                     variant="ghost"
