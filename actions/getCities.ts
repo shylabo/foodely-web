@@ -1,9 +1,8 @@
-import { City, availableCities } from './mock';
+import { City } from '@/types';
 
 export async function getCities(): Promise<City[] | null> {
-  return availableCities;
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v1/countries`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cities`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -15,11 +14,11 @@ export async function getCities(): Promise<City[] | null> {
       throw new Error(res.statusText);
     }
 
-    const countries = await res.json();
-    if (!countries.data) return null;
+    const cities = await res.json();
+    if (!cities) return null;
 
-    return countries.data;
+    return cities;
   } catch (error: any) {
-    throw new Error('Failed to fetch countries', error);
+    throw new Error('Failed to fetch cities', error);
   }
 }

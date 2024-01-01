@@ -1,5 +1,4 @@
-import { CategoryData } from '@/actions/mock';
-import { IntoleranceData } from '@/actions/mock/intolerance';
+import { Allergy, Category } from '.';
 
 export interface Restaurant {
   id: number;
@@ -9,7 +8,7 @@ export interface Restaurant {
   address: string;
   eye_catch_image: string;
   cover_image: string;
-  categories: CategoryData[];
-  intolerance: IntoleranceData[];
+  categories: Category[];
+  allergies: Allergy[];
   min_order_amount: number;
 }

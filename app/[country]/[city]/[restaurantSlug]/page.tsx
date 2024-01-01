@@ -1,6 +1,5 @@
+import { getMenuItemsByRestaurantId, getRestaurantBySlug } from '@/actions';
 import Client from './Client';
-import { getRestaurantBySlug } from '@/actions/getRestaurantBySlug';
-import { getMenuItemsByRestaurantId } from '@/actions/getMenuItemsByRestaurantId.ts';
 
 interface RestaurantPageProps {
   params: {

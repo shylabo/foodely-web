@@ -1,5 +1,4 @@
 import { menuItems } from './mock';
-import { restaurants } from './mock/restaurant';
 import { MenuItem } from '@/types/menu-item';
 
 export async function getMenuItemsByRestaurantId(id: number, query?: string): Promise<MenuItem[]> {

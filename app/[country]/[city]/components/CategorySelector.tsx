@@ -1,8 +1,8 @@
-import { CategoryData } from '@/actions/mock';
+import { Category } from '@/types';
 import CategoryCard from './CategoryCard';
 
 interface CategorySelectorProps {
-  categories: CategoryData[];
+  categories: Category[];
 }
 
 const CategorySelector: React.FC<CategorySelectorProps> = ({ categories }) => {
@@ -12,7 +12,7 @@ const CategorySelector: React.FC<CategorySelectorProps> = ({ categories }) => {
       <ul className="flex flex-col flex-wrap h-96 md:h-[420px] gap-x-4 gap-y-2 p-2 overflow-auto no-scrollbar">
         {categories?.map((category) => (
           <li>
-            <CategoryCard key={category.value} category={category} />
+            <CategoryCard key={category.slug} category={category} />
           </li>
         ))}
       </ul>

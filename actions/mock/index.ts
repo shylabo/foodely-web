@@ -1,4 +1,2 @@
-export * from './category';
-export * from './city';
-export * from './country';
 export * from './menuItem';
+export * from './restaurant';

@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { MdArrowBack } from 'react-icons/md';
 
 import CitySelector from './CitySelector';
-import { getCountries } from '@/actions/getCountries';
-import { City } from '@/actions/mock';
+import { getCountries } from '@/actions';
+import { City } from '@/types';
 
 interface SelectCityProps {
   cities: City[];
@@ -13,7 +13,7 @@ const SelectCity: React.FC<SelectCityProps> = async ({ cities }) => {
   const countries = await getCountries();
   if (!countries) return null;
 
-  const country = countries.find((country) => country.value === cities[0].countryCode);
+  const country = countries.find((country) => country.slug === cities[0].country_code);
   return (
     <section className="p-8 space-y-8">
       <div className="flex items-center justify-between">
@@ -31,7 +31,7 @@ const SelectCity: React.FC<SelectCityProps> = async ({ cities }) => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-8">
         {cities.map((city) => (
-          <CitySelector key={city.value} city={city} />
+          <CitySelector key={city.slug} city={city} />
         ))}
       </div>
     </section>

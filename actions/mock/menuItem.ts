@@ -9,17 +9,17 @@ export const menuItems: MenuItem[] = [
     eye_catch_image:
       'https://plus.unsplash.com/premium_photo-1668618295237-f1d8666812c9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     address: '123 Main Street',
-    intolerance: [
+    allergies: [
       {
-        value: 'dairy',
+        slug: 'dairy',
         label: 'Dairy',
       },
       {
-        value: 'egg',
+        slug: 'egg',
         label: 'Egg',
       },
       {
-        value: 'gluten',
+        slug: 'gluten',
         label: 'Gluten',
       },
     ],
@@ -34,17 +34,17 @@ export const menuItems: MenuItem[] = [
     eye_catch_image:
       'https://plus.unsplash.com/premium_photo-1668618295237-f1d8666812c9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     address: '456 Oak Avenue',
-    intolerance: [
+    allergies: [
       {
-        value: 'dairy',
+        slug: 'dairy',
         label: 'Dairy',
       },
       {
-        value: 'egg',
+        slug: 'egg',
         label: 'Egg',
       },
       {
-        value: 'gluten',
+        slug: 'gluten',
         label: 'Gluten',
       },
     ],
@@ -59,17 +59,17 @@ export const menuItems: MenuItem[] = [
     eye_catch_image:
       'https://plus.unsplash.com/premium_photo-1668618295237-f1d8666812c9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     address: '789 Pine Street',
-    intolerance: [
+    allergies: [
       {
-        value: 'dairy',
+        slug: 'dairy',
         label: 'Dairy',
       },
       {
-        value: 'egg',
+        slug: 'egg',
         label: 'Egg',
       },
       {
-        value: 'gluten',
+        slug: 'gluten',
         label: 'Gluten',
       },
     ],
@@ -84,17 +84,17 @@ export const menuItems: MenuItem[] = [
     eye_catch_image:
       'https://plus.unsplash.com/premium_photo-1668618295237-f1d8666812c9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     address: '101 Maple Avenue',
-    intolerance: [
+    allergies: [
       {
-        value: 'dairy',
+        slug: 'dairy',
         label: 'Dairy',
       },
       {
-        value: 'egg',
+        slug: 'egg',
         label: 'Egg',
       },
       {
-        value: 'gluten',
+        slug: 'gluten',
         label: 'Gluten',
       },
     ],
@@ -109,17 +109,17 @@ export const menuItems: MenuItem[] = [
     eye_catch_image:
       'https://plus.unsplash.com/premium_photo-1668618295237-f1d8666812c9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     address: '202 Elm Street',
-    intolerance: [
+    allergies: [
       {
-        value: 'dairy',
+        slug: 'dairy',
         label: 'Dairy',
       },
       {
-        value: 'egg',
+        slug: 'egg',
         label: 'Egg',
       },
       {
-        value: 'gluten',
+        slug: 'gluten',
         label: 'Gluten',
       },
     ],

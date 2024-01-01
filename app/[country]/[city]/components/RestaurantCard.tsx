@@ -46,8 +46,8 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant }) => {
           </div>
           <div className="flex items-center gap-x-1">
             <MdOutlineError size={16} />
-            {restaurant.intolerance.map((item) => (
-              <Badge variant="secondary">{item.label}</Badge>
+            {restaurant.allergies.map((allergy) => (
+              <Badge variant="secondary">{allergy.label}</Badge>
             ))}
           </div>
           <div className="flex items-center gap-x-1">

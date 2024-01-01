@@ -1,4 +1,4 @@
-import { IntoleranceData } from '@/actions/mock/intolerance';
+import { Allergy } from '.';
 
 export interface MenuItem {
   id: number;
@@ -7,7 +7,7 @@ export interface MenuItem {
   description: string;
   eye_catch_image: string;
   address: string;
-  intolerance: IntoleranceData[];
+  allergies: Allergy[];
   amount: number;
   menu_section: string;
 }

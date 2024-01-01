@@ -80,9 +80,9 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ menuItem, handleAddToCart }
               <CardDescription className="text-base">{menuItem.description}</CardDescription>
             </div>
             <div className="flex items-center gap-x-1">
-              {menuItem.intolerance.map((item) => (
-                <Badge key={item.value} variant="secondary">
-                  {item.label}
+              {menuItem.allergies.map((allergy) => (
+                <Badge key={allergy.slug} variant="secondary">
+                  {allergy.label}
                 </Badge>
               ))}
             </div>
@@ -106,9 +106,9 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ menuItem, handleAddToCart }
               <p>{formattedAmount}</p>
               <DialogDescription>{menuItem.description}</DialogDescription>
               <div className="flex items-center gap-x-1">
-                {menuItem.intolerance.map((item) => (
-                  <Badge key={item.value} variant="secondary">
-                    {item.label}
+                {menuItem.allergies.map((allergy) => (
+                  <Badge key={allergy.slug} variant="secondary">
+                    {allergy.label}
                   </Badge>
                 ))}
               </div>

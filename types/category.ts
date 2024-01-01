@@ -1,28 +1,36 @@
-export type Category =
-  | 'African'
-  | 'Asian'
-  | 'American'
-  | 'British'
-  | 'Cajun'
-  | 'Caribbean'
-  | 'Chinese'
-  | 'Eastern European'
-  | 'European'
-  | 'French'
-  | 'German'
-  | 'Greek'
-  | 'Indian'
-  | 'Irish'
-  | 'Italian'
-  | 'Japanese'
-  | 'Jewish'
-  | 'Korean'
-  | 'Latin American'
-  | 'Mediterranean'
-  | 'Mexican'
-  | 'Middle Eastern'
-  | 'Nordic'
-  | 'Southern'
-  | 'Spanish'
-  | 'Thai'
-  | 'Vietnamese';
+export type CategoryType =
+  | 'african'
+  | 'asian'
+  | 'american'
+  | 'british'
+  | 'cajun'
+  | 'caribbean'
+  | 'chinese'
+  | 'eastern_european'
+  | 'european'
+  | 'french'
+  | 'german'
+  | 'greek'
+  | 'indian'
+  | 'irish'
+  | 'italian'
+  | 'japanese'
+  | 'jewish'
+  | 'korean'
+  | 'latin_american'
+  | 'mediterranean'
+  | 'mexican'
+  | 'middle_eastern'
+  | 'nordic'
+  | 'southern'
+  | 'spanish'
+  | 'thai'
+  | 'vietnamese';
+
+export interface Category {
+  slug: CategoryType;
+  label: string;
+  image_url: string;
+  created_at: Date;
+  updated_at: Date;
+}

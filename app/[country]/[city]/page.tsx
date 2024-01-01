@@ -1,7 +1,6 @@
-import { getCategories } from '@/actions';
+import { getCategories, getRestaurants } from '@/actions';
 import Container from '@/components/layout/Container';
 import CategorySelector from './components/CategorySelector';
-import { getRestaurants } from '@/actions/getRestaurants';
 import RestaurantCard from './components/RestaurantCard';
 import { Separator } from '@/components/ui/separator';
 

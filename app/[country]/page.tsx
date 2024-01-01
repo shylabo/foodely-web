@@ -3,8 +3,8 @@ import Hero from '../components/Hero';
 import AboutFoodely from '../components/AboutFoodely';
 import FoodelyApp from '../components/FoodelyApp';
 import SelectCity from './components/SelectCity';
-import { availableCities } from '@/actions/mock/city';
 import Link from 'next/link';
+import { getCities } from '@/actions';
 
 interface CitySelectPageProps {
   params: {
@@ -12,8 +12,10 @@ interface CitySelectPageProps {
   };
 }
 
-const CitySelectPage: React.FC<CitySelectPageProps> = ({ params: { country } }) => {
-  const selectableCities = availableCities.filter((city) => city.countryCode === country);
+const CitySelectPage: React.FC<CitySelectPageProps> = async ({ params: { country } }) => {
+  const cities = await getCities();
+  if (!cities) return;
+  const selectableCities = cities.filter((city) => city.country_code === country);
 
   return (
     <>
