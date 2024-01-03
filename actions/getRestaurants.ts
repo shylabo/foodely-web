@@ -4,7 +4,7 @@ import { restaurants } from './mock/restaurant';
 export async function getRestaurants(): Promise<Restaurant[] | null> {
   return restaurants;
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v1/restaurants`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/restaurants`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

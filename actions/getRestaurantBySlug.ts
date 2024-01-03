@@ -5,7 +5,7 @@ export async function getRestaurantBySlug(slug: string): Promise<Restaurant | nu
   const restaurant = restaurants.find((restaurant) => restaurant.slug === slug);
   return restaurant ?? null;
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v1/restaurants`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/restaurants`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
