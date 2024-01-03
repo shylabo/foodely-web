@@ -4,14 +4,23 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Cookies from 'js-cookie';
 import { useContext } from 'react';
+import { useRouter } from 'next/navigation';
+import { MdLogout } from 'react-icons/md';
 
 import { Button } from '../ui/button';
 import { AuthContext } from '@/providers/AuthProvider';
 import { signOut } from '@/lib/api/auth';
-import { useRouter } from 'next/navigation';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 const Header = () => {
-  const { loading, isSignedIn, setIsSignedIn } = useContext(AuthContext);
+  const { loading, isSignedIn, setIsSignedIn, currentUser } = useContext(AuthContext);
   const router = useRouter();
 
   const handleSignOut = async (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -37,9 +46,35 @@ const Header = () => {
     if (!loading) {
       if (isSignedIn) {
         return (
-          <Button variant="ghost" onClick={handleSignOut}>
-            Sign out
-          </Button>
+          <>
+            <DropdownMenu>
+              <DropdownMenuTrigger>
+                <Image
+                  src={currentUser?.image ?? '/image/user-default.jpg'}
+                  alt="user image"
+                  width={32}
+                  height={32}
+                  className="object-cover rounded-full"
+                />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuLabel>
+                  <p>{currentUser?.name}</p>
+                  <p>{currentUser?.email}</p>
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={() => alert('Coming soon')}>Profile</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => alert('Coming soon')}>My Order</DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
+                  <button type="button" onClick={handleSignOut} className="flex items-center gap-x-1">
+                    <MdLogout />
+                    Sign out
+                  </button>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </>
         );
       } else {
         return (
