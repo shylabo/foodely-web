@@ -1,4 +1,5 @@
 export * from './allergy';
+export * from './auth';
 export * from './category';
 export * from './city';
 export * from './country';
@@ -6,3 +7,4 @@ export * from './diet';
 export * from './dish';
 export * from './menu-item';
 export * from './restaurant';
+export * from './user';
