@@ -12,7 +12,12 @@ const RestaurantPage: React.FC<RestaurantPageProps> = async ({ params: { restaur
   const restaurant = await getRestaurantById(restaurantId);
   if (!restaurant) return null;
 
-  return <Client restaurant={restaurant} menuItems={restaurant.menu_items} />;
+  // TODO: Filter by requesting server
+  const menuItems = q
+    ? restaurant.menu_items.filter((item) => item.name.toLowerCase().includes(q.toLowerCase()))
+    : restaurant.menu_items;
+
+  return <Client restaurant={restaurant} menuItems={menuItems} />;
 };
 
 export default RestaurantPage;
