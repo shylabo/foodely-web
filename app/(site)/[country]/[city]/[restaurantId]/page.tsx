@@ -1,15 +1,15 @@
-import { getMenuItemsByRestaurantId, getRestaurantBySlug } from '@/actions';
+import { getMenuItemsByRestaurantId, getRestaurantById } from '@/actions';
 import Client from './Client';
 
 interface RestaurantPageProps {
   params: {
-    restaurantSlug: string;
+    restaurantId: string;
   };
   searchParams: { q: string };
 }
 
-const RestaurantPage: React.FC<RestaurantPageProps> = async ({ params: { restaurantSlug }, searchParams: { q } }) => {
-  const restaurant = await getRestaurantBySlug(restaurantSlug);
+const RestaurantPage: React.FC<RestaurantPageProps> = async ({ params: { restaurantId }, searchParams: { q } }) => {
+  const restaurant = await getRestaurantById(restaurantId);
   if (!restaurant) return null;
 
   const menuItems = await getMenuItemsByRestaurantId(restaurant.id, q);

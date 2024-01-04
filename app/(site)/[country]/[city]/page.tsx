@@ -23,8 +23,8 @@ const MenuIndexPage: React.FC<MenuIndexPageProps> = async ({ params: { city } })
       <section className="space-y-4">
         <h2 className="font-extrabold text-3xl">Offers near you</h2>
         <ul className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8">
-          {restaurants.map((restaurant, i) => (
-            <li key={restaurant.slug + i}>
+          {restaurants.map((restaurant) => (
+            <li key={restaurant.id}>
               <RestaurantCard restaurant={restaurant} />
             </li>
           ))}

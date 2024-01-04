@@ -22,7 +22,7 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant }) => {
   const formattedMinAmount = formatter.format(restaurant.min_order_amount);
   return (
     <Card className="w-full max-w-xl min-h-48 transition hover:scale-105">
-      <Link href={`${pathname}/${restaurant.slug}`}>
+      <Link href={`${pathname}/${restaurant.id}`}>
         <div className="relative h-40 w-full">
           <Image
             src={restaurant.eye_catch_image}
