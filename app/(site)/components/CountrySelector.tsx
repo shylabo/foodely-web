@@ -18,6 +18,7 @@ const CountrySelector: React.FC<CountrySelectorProps> = ({ countryCode, name, fl
       variant="outline"
       className="flex justify-between h-16 w-full hover:text-primary"
       onClick={() => router.push(`/${countryCode}`)}
+      disabled={countryCode !== 'ca'}
     >
       <p className="flex items-center gap-x-2 text-lg">
         <span className="text-2xl">{flag}</span>

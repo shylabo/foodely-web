@@ -17,6 +17,8 @@ const CountrySelector: React.FC<CitySelectorProps> = ({ city }) => {
       variant="outline"
       className="flex justify-between h-16 w-full hover:text-primary"
       onClick={() => router.push(`/${city.country_code}/${city.slug}`)}
+      // TODO: Remove disability
+      disabled={city.slug !== 'vancouver'}
     >
       <p className="flex items-center gap-x-2 text-lg">{city.label}</p>
       <MdOutlineArrowForwardIos />

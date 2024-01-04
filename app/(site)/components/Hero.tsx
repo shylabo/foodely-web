@@ -17,7 +17,7 @@ const Hero = () => {
       <div className="absolute bottom-6 left-8 w-2/3 md:w-1/3">
         <div className="relative">
           <MdLocationOn size={24} color="gray" className="absolute top-3 left-3" />
-          <Input className="pl-10 h-12" placeholder="Enter delivery address" />
+          <Input className="pl-10 h-12" placeholder="Enter delivery address" disabled />
         </div>
       </div>
     </section>
