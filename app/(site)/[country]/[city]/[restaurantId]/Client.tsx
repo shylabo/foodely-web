@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Image from 'next/image';
 import {
   MdAddCircleOutline,
@@ -37,6 +37,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import { AuthContext } from '@/providers/AuthProvider';
 
 const deliveryTimes = [
   {
@@ -82,6 +83,7 @@ export interface CartItem {
 const Client: React.FC<ClientProps> = ({ restaurant, menuItems }) => {
   const [cart, setCart] = useState<CartItem[]>([]);
   const pathname = usePathname();
+  const { isSignedIn } = useContext(AuthContext);
 
   const formatter = getFormatter();
   const formattedMinAmount = formatter.format(restaurant.min_order_amount);
@@ -300,8 +302,8 @@ const Client: React.FC<ClientProps> = ({ restaurant, menuItems }) => {
                               Cancel
                             </Button>
                           </DialogClose>
-                          <DialogClose>
-                            <Button type="submit" className="w-full" disabled={!canCheckout}>
+                          <DialogClose asChild>
+                            <Button type="submit" disabled={!canCheckout || !isSignedIn}>
                               Place Order
                             </Button>
                           </DialogClose>
