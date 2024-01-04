@@ -32,9 +32,9 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ menuItem, handleAddToCart }
   const [quantity, setQuantity] = useState(1);
   const formatter = getFormatter();
 
-  const formattedAmount = formatter.format(menuItem.amount);
+  const formattedAmount = formatter.format(menuItem.price);
 
-  const total = menuItem.amount * quantity;
+  const total = menuItem.price * quantity;
   const formattedTotal = formatter.format(total);
 
   const handleIncrementQuantity = () => {
@@ -63,7 +63,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ menuItem, handleAddToCart }
           <div className="relative">
             <div className="relative h-56 w-full">
               <Image
-                src={menuItem.eye_catch_image}
+                src={menuItem.eye_catch_image ?? '/image/no-image.png'}
                 alt="category image"
                 sizes="100%"
                 fill

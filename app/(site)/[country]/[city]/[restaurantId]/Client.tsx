@@ -133,7 +133,7 @@ const Client: React.FC<ClientProps> = ({ restaurant, menuItems }) => {
 
   const getTotalAmount = () => {
     return cart.reduce((acc, curr) => {
-      return acc + curr.menuItem.amount * curr.quantity;
+      return acc + curr.menuItem.price * curr.quantity;
     }, 0);
   };
   const totalAmount = getTotalAmount();
@@ -216,7 +216,7 @@ const Client: React.FC<ClientProps> = ({ restaurant, menuItems }) => {
                         </div>
                         <div className="flex-1 space-y-1">
                           <p>{cartItem.menuItem.name}</p>
-                          <p className="text-primary">{formatter.format(cartItem.menuItem.amount)}</p>
+                          <p className="text-primary">{formatter.format(cartItem.menuItem.price)}</p>
                         </div>
                         <button type="button" onClick={() => handleDecrementItem(cartItem)}>
                           <MdOutlineRemoveCircleOutline size={20} className="text-primary hover:text-primary/70" />
@@ -281,7 +281,7 @@ const Client: React.FC<ClientProps> = ({ restaurant, menuItems }) => {
                                 </div>
                                 <div className="flex-1 space-y-1">
                                   <p>{cartItem.menuItem.name}</p>
-                                  <p className="text-primary">{formatter.format(cartItem.menuItem.amount)}</p>
+                                  <p className="text-primary">{formatter.format(cartItem.menuItem.price)}</p>
                                 </div>
                                 <div>{cartItem.quantity}</div>
                               </li>
@@ -336,11 +336,12 @@ const Client: React.FC<ClientProps> = ({ restaurant, menuItems }) => {
         <Separator className="mb-6" />
 
         <ul className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8">
-          {menuItems.map((item) => (
-            <li key={item.name}>
-              <MenuItemCard menuItem={item} handleAddToCart={handleAddToCart} />
-            </li>
-          ))}
+          {menuItems.length > 0 &&
+            menuItems.map((item) => (
+              <li key={item.name}>
+                <MenuItemCard menuItem={item} handleAddToCart={handleAddToCart} />
+              </li>
+            ))}
         </ul>
 
         <div className="h-20" />

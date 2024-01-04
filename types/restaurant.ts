@@ -1,4 +1,4 @@
-import { Allergy, Category } from '.';
+import { Allergy, Category, MenuItem } from '.';
 
 export interface Restaurant {
   id: number;
@@ -10,5 +10,6 @@ export interface Restaurant {
   cover_image: string;
   categories: Category[];
   allergies: Allergy[];
+  menu_items: MenuItem[];
   min_order_amount: number;
 }

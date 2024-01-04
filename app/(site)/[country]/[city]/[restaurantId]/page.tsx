@@ -1,4 +1,4 @@
-import { getMenuItemsByRestaurantId, getRestaurantById } from '@/actions';
+import { getRestaurantById } from '@/actions';
 import Client from './Client';
 
 interface RestaurantPageProps {
@@ -12,9 +12,7 @@ const RestaurantPage: React.FC<RestaurantPageProps> = async ({ params: { restaur
   const restaurant = await getRestaurantById(restaurantId);
   if (!restaurant) return null;
 
-  const menuItems = await getMenuItemsByRestaurantId(restaurant.id, q);
-
-  return <Client restaurant={restaurant} menuItems={menuItems} />;
+  return <Client restaurant={restaurant} menuItems={restaurant.menu_items} />;
 };
 
 export default RestaurantPage;

@@ -6,8 +6,6 @@ export interface MenuItem {
   name: string;
   description: string;
   eye_catch_image: string;
-  address: string;
   allergies: Allergy[];
-  amount: number;
-  menu_section: string;
+  price: number;
 }
