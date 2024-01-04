@@ -25,7 +25,7 @@ import { getFormatter } from '@/lib/utils';
 import { Restaurant } from '@/types/restaurant';
 import { MenuItem } from '@/types/menu-item';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
-import SearchInput from '@/components/SearchInput';
+import SearchInput from '@/app/(site)/components/SearchInput';
 import { usePathname } from 'next/navigation';
 import {
   Dialog,

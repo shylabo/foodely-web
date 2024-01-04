@@ -1,5 +1,5 @@
 import { getCountries } from '@/actions';
-import CountrySelector from '@/components/CountrySelector';
+import CountrySelector from '@/app/(site)/components/CountrySelector';
 
 const SelectCountry = async () => {
   const countries = await getCountries();
